@@ -14,6 +14,7 @@ The app is intentionally simple. It does not require a backend, account, or paid
 - Start, pause, reset, and skip controls
 - Local task list with add, complete, delete, and clear completed actions
 - Task persistence using `UserDefaults`
+- Persisted focus stats for completed rounds and total focus minutes
 - Ambient sound options for rain, ocean, and deep noise
 - Native SwiftUI interface for iPhone and iPad
 

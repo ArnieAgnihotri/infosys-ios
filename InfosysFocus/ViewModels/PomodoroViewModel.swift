@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 @MainActor
 final class PomodoroViewModel: ObservableObject {
@@ -42,8 +43,19 @@ final class PomodoroViewModel: ObservableObject {
     @Published private(set) var secondsRemaining: Int = Mode.focus.duration
     @Published private(set) var isRunning = false
     @Published private(set) var completedFocusRounds = 0
+    @Published private(set) var totalFocusMinutes = 0
+    @Published private(set) var lastCompletedAt: Date?
 
     private var timerTask: Task<Void, Never>?
+    private let completedRoundsKey = "infosys-focus.completed-rounds"
+    private let totalFocusMinutesKey = "infosys-focus.total-focus-minutes"
+    private let lastCompletedAtKey = "infosys-focus.last-completed-at"
+
+    init() {
+        completedFocusRounds = UserDefaults.standard.integer(forKey: completedRoundsKey)
+        totalFocusMinutes = UserDefaults.standard.integer(forKey: totalFocusMinutesKey)
+        lastCompletedAt = UserDefaults.standard.object(forKey: lastCompletedAtKey) as? Date
+    }
 
     var progress: Double {
         1 - (Double(secondsRemaining) / Double(selectedMode.duration))
@@ -59,10 +71,10 @@ final class PomodoroViewModel: ObservableObject {
         guard !isRunning else { return }
         isRunning = true
 
-        timerTask = Task { [weak self] in
+        timerTask = Task { @MainActor [weak self] in
             while !Task.isCancelled {
                 try? await Task.sleep(nanoseconds: 1_000_000_000)
-                await self?.tick()
+                self?.tick()
             }
         }
     }
@@ -94,6 +106,7 @@ final class PomodoroViewModel: ObservableObject {
 
     private func completeCurrentMode() {
         if selectedMode == .focus {
+            recordFocusSession()
             completedFocusRounds += 1
             selectedMode = completedFocusRounds.isMultiple(of: 4) ? .longBreak : .shortBreak
         } else {
@@ -102,6 +115,17 @@ final class PomodoroViewModel: ObservableObject {
 
         pause()
         secondsRemaining = selectedMode.duration
+    }
+
+    private func recordFocusSession() {
+        totalFocusMinutes += selectedMode.duration / 60
+        lastCompletedAt = .now
+
+        UserDefaults.standard.set(completedFocusRounds + 1, forKey: completedRoundsKey)
+        UserDefaults.standard.set(totalFocusMinutes, forKey: totalFocusMinutesKey)
+        UserDefaults.standard.set(lastCompletedAt, forKey: lastCompletedAtKey)
+
+        UINotificationFeedbackGenerator().notificationOccurred(.success)
     }
 
     deinit {

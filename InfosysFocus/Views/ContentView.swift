@@ -27,6 +27,7 @@ struct ContentView: View {
                         )
 
                         timerControls
+                        statsRow
                     }
                     .panelBackground()
 
@@ -82,6 +83,48 @@ struct ContentView: View {
             .buttonStyle(.bordered)
             .accessibilityLabel("Skip timer")
         }
+    }
+
+    private var statsRow: some View {
+        HStack(spacing: 12) {
+            statItem(
+                title: "Rounds",
+                value: "\(pomodoro.completedFocusRounds)",
+                symbolName: "checkmark.seal"
+            )
+
+            statItem(
+                title: "Minutes",
+                value: "\(pomodoro.totalFocusMinutes)",
+                symbolName: "clock"
+            )
+
+            statItem(
+                title: "Tasks",
+                value: "\(taskStore.completedTasks.count)",
+                symbolName: "list.bullet.clipboard"
+            )
+        }
+    }
+
+    private func statItem(title: String, value: String, symbolName: String) -> some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Image(systemName: symbolName)
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+
+            Text(value)
+                .font(.title3)
+                .fontWeight(.semibold)
+                .monospacedDigit()
+
+            Text(title)
+                .font(.caption)
+                .foregroundStyle(.secondary)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(12)
+        .background(Color(.secondarySystemGroupedBackground), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
     }
 }
 
