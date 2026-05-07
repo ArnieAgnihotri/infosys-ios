@@ -17,7 +17,39 @@
 		0A1000080000000000000008 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2000080000000000000008 /* TaskListView.swift */; };
 		0A1000090000000000000009 /* AmbientPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2000090000000000000009 /* AmbientPickerView.swift */; };
 		0A10000A000000000000000A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A20000A000000000000000A /* Assets.xcassets */; };
+		0A10000B000000000000000B /* FocusSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A20000C000000000000000C /* FocusSession.swift */; };
+		0A10000C000000000000000C /* NotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A20000D000000000000000D /* NotificationScheduler.swift */; };
+		0A10000D000000000000000D /* TimerSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A20000E000000000000000E /* TimerSettingsView.swift */; };
+		0A10000E000000000000000E /* FocusHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A20000F000000000000000F /* FocusHistoryView.swift */; };
+		0A10000F000000000000000F /* SharedFocusState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2000100000000000000010 /* SharedFocusState.swift */; };
+		0B1000010000000000000001 /* InfosysFocusWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2000010000000000000001 /* InfosysFocusWidget.swift */; };
+		0B1000020000000000000002 /* SharedFocusState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2000100000000000000010 /* SharedFocusState.swift */; };
+		0B1000030000000000000003 /* InfosysFocusWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 0B2000040000000000000004 /* InfosysFocusWidget.appex */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0B1100010000000000000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0A7000010000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0B5000010000000000000001;
+			remoteInfo = InfosysFocusWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0B1200010000000000000001 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0B1000030000000000000003 /* InfosysFocusWidget.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0A2000010000000000000001 /* InfosysFocusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfosysFocusApp.swift; sourceTree = "<group>"; };
@@ -31,10 +63,27 @@
 		0A2000090000000000000009 /* AmbientPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmbientPickerView.swift; sourceTree = "<group>"; };
 		0A20000A000000000000000A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A20000B000000000000000B /* InfosysFocus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfosysFocus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A20000C000000000000000C /* FocusSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusSession.swift; sourceTree = "<group>"; };
+		0A20000D000000000000000D /* NotificationScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationScheduler.swift; sourceTree = "<group>"; };
+		0A20000E000000000000000E /* TimerSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSettingsView.swift; sourceTree = "<group>"; };
+		0A20000F000000000000000F /* FocusHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusHistoryView.swift; sourceTree = "<group>"; };
+		0A2000100000000000000010 /* SharedFocusState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedFocusState.swift; sourceTree = "<group>"; };
+		0B2000010000000000000001 /* InfosysFocusWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfosysFocusWidget.swift; sourceTree = "<group>"; };
+		0B2000020000000000000002 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B2000030000000000000003 /* InfosysFocusWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InfosysFocusWidget.entitlements; sourceTree = "<group>"; };
+		0B2000040000000000000004 /* InfosysFocusWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = InfosysFocusWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B2000050000000000000005 /* InfosysFocus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InfosysFocus.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		0A3000010000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0B3000010000000000000001 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -48,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				0A4000020000000000000002 /* InfosysFocus */,
+				0B4000010000000000000001 /* InfosysFocusWidget */,
 				0A4000060000000000000006 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,10 +106,12 @@
 			isa = PBXGroup;
 			children = (
 				0A2000010000000000000001 /* InfosysFocusApp.swift */,
+				0B2000050000000000000005 /* InfosysFocus.entitlements */,
 				0A4000030000000000000003 /* Models */,
 				0A4000040000000000000004 /* Services */,
 				0A4000050000000000000005 /* ViewModels */,
 				0A4000070000000000000007 /* Views */,
+				0A4000080000000000000008 /* Shared */,
 				0A20000A000000000000000A /* Assets.xcassets */,
 			);
 			path = InfosysFocus;
@@ -69,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				0A2000030000000000000003 /* FocusTask.swift */,
+				0A20000C000000000000000C /* FocusSession.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -78,6 +131,7 @@
 			children = (
 				0A2000040000000000000004 /* TaskStore.swift */,
 				0A2000060000000000000006 /* AmbientAudioController.swift */,
+				0A20000D000000000000000D /* NotificationScheduler.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -94,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				0A20000B000000000000000B /* InfosysFocus.app */,
+				0B2000040000000000000004 /* InfosysFocusWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,8 +160,28 @@
 				0A2000070000000000000007 /* TimerRingView.swift */,
 				0A2000080000000000000008 /* TaskListView.swift */,
 				0A2000090000000000000009 /* AmbientPickerView.swift */,
+				0A20000E000000000000000E /* TimerSettingsView.swift */,
+				0A20000F000000000000000F /* FocusHistoryView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		0A4000080000000000000008 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				0A2000100000000000000010 /* SharedFocusState.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		0B4000010000000000000001 /* InfosysFocusWidget */ = {
+			isa = PBXGroup;
+			children = (
+				0B2000010000000000000001 /* InfosysFocusWidget.swift */,
+				0B2000020000000000000002 /* Info.plist */,
+				0B2000030000000000000003 /* InfosysFocusWidget.entitlements */,
+			);
+			path = InfosysFocusWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,15 +194,33 @@
 				0A6000010000000000000001 /* Sources */,
 				0A3000010000000000000001 /* Frameworks */,
 				0A6000020000000000000002 /* Resources */,
+				0B1200010000000000000001 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0B1300010000000000000001 /* PBXTargetDependency */,
 			);
 			name = InfosysFocus;
 			productName = InfosysFocus;
 			productReference = 0A20000B000000000000000B /* InfosysFocus.app */;
 			productType = "com.apple.product-type.application";
+		};
+		0B5000010000000000000001 /* InfosysFocusWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0B9000010000000000000001 /* Build configuration list for PBXNativeTarget "InfosysFocusWidget" */;
+			buildPhases = (
+				0B6000010000000000000001 /* Sources */,
+				0B3000010000000000000001 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = InfosysFocusWidget;
+			productName = InfosysFocusWidget;
+			productReference = 0B2000040000000000000004 /* InfosysFocusWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -140,6 +233,9 @@
 				LastUpgradeCheck = 2620;
 				TargetAttributes = {
 					0A5000010000000000000001 = {
+						CreatedOnToolsVersion = 26.2;
+					};
+					0B5000010000000000000001 = {
 						CreatedOnToolsVersion = 26.2;
 					};
 				};
@@ -158,6 +254,7 @@
 			projectRoot = "";
 			targets = (
 				0A5000010000000000000001 /* InfosysFocus */,
+				0B5000010000000000000001 /* InfosysFocusWidget */,
 			);
 		};
 /* End PBXProject section */
@@ -187,10 +284,32 @@
 				0A1000070000000000000007 /* TimerRingView.swift in Sources */,
 				0A1000080000000000000008 /* TaskListView.swift in Sources */,
 				0A1000090000000000000009 /* AmbientPickerView.swift in Sources */,
+				0A10000B000000000000000B /* FocusSession.swift in Sources */,
+				0A10000C000000000000000C /* NotificationScheduler.swift in Sources */,
+				0A10000D000000000000000D /* TimerSettingsView.swift in Sources */,
+				0A10000E000000000000000E /* FocusHistoryView.swift in Sources */,
+				0A10000F000000000000000F /* SharedFocusState.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0B6000010000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B1000010000000000000001 /* InfosysFocusWidget.swift in Sources */,
+				0B1000020000000000000002 /* SharedFocusState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0B1300010000000000000001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0B5000010000000000000001 /* InfosysFocusWidget */;
+			targetProxy = 0B1100010000000000000001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		0A8000010000000000000001 /* Debug */ = {
@@ -312,6 +431,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = InfosysFocus/InfosysFocus.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
@@ -342,6 +463,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = InfosysFocus/InfosysFocus.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
@@ -368,6 +491,58 @@
 			};
 			name = Release;
 		};
+		0B8000010000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = InfosysFocusWidget/InfosysFocusWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = InfosysFocusWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.infosysfocus.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0B8000020000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = InfosysFocusWidget/InfosysFocusWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = InfosysFocusWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.infosysfocus.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -385,6 +560,15 @@
 			buildConfigurations = (
 				0A8000030000000000000003 /* Debug */,
 				0A8000040000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0B9000010000000000000001 /* Build configuration list for PBXNativeTarget "InfosysFocusWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B8000010000000000000001 /* Debug */,
+				0B8000020000000000000002 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -10,6 +10,7 @@ struct ContentView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 18) {
                     header
+                    quickLinks
 
                     VStack(spacing: 18) {
                         Picker("Timer mode", selection: $pomodoro.selectedMode) {
@@ -52,6 +53,26 @@ struct ContentView: View {
                 .foregroundStyle(.secondary)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    private var quickLinks: some View {
+        HStack(spacing: 12) {
+            NavigationLink {
+                FocusHistoryView(summaries: pomodoro.dailySummaries, sessions: pomodoro.sessions)
+            } label: {
+                Label("History", systemImage: "calendar")
+                    .frame(maxWidth: .infinity)
+            }
+            .buttonStyle(.bordered)
+
+            NavigationLink {
+                TimerSettingsView(pomodoro: pomodoro)
+            } label: {
+                Label("Settings", systemImage: "slider.horizontal.3")
+                    .frame(maxWidth: .infinity)
+            }
+            .buttonStyle(.bordered)
+        }
     }
 
     private var timerControls: some View {
